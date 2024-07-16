@@ -1,0 +1,7 @@
+{
+  "name": "ChatBot",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

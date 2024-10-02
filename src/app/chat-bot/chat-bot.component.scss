@@ -1,0 +1,161 @@
+#header{
+display: flex;
+align-items: center;
+margin-bottom: 0px;
+margin-top: 5vh;
+padding-left: 15px;
+
+span{
+  margin-left: 5px;
+}
+}
+
+#chatIcon{
+   height: 50px; 
+ 
+   
+}
+    
+  #chatContainer{
+    height: 75vh;
+    border-radius: 20px;
+    background-color: #0f172a ;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    padding: 50px 40px 30px 30px;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  p{
+    color: white;
+  }
+  
+  #divQuestion{
+    opacity: 0.8;
+    animation: scaleDown 0.5s ease;
+    transform: scale(0.9);    
+  }
+
+ 
+
+  @keyframes scaleDown {
+    from {transform: scale(1);}
+  }
+  
+  #divAnswer{
+  
+    animation: slideRight 0.5s ease-out;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    width: 100%;
+    height: auto;
+    transition: all 2s ease;
+  
+    ion-item{
+        --background: #152242;
+    }
+
+    p{
+      display: block;
+      border-right: 2px solid;
+      border-color: transparent;
+      padding-right: 7px;
+      white-space: pre-wrap; 
+      overflow: visible; 
+      animation: 
+      typing 1.5s linear, thecursor .4s  3,  ;
+    }
+  }
+
+  ion-item{
+    --background: #0f172a;
+    border-radius: 20px;
+  }
+  
+  ion-spinner{
+    position: absolute;
+    top:-50px;
+    left: 150px;
+    z-index: 99999;
+  }
+  
+  @keyframes slideRight{
+    from {transform: translatex(-20px); opacity: 0; }
+  }
+  
+  @keyframes thecursor {
+    50% {border-color: rgb(255, 255, 255);}
+  }
+  
+  @keyframes typing {
+    from {width: 0; height: 17px;}
+  }
+  
+  
+  span{
+  font-size:10px;
+  font-weight: 500;
+  color: rgb(177, 177, 177);
+  }
+  
+  
+  #loading{
+  
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+    z-index: 999;
+  }
+
+#searchbar{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+    display: block;
+    z-index: 999;
+    background: #080c19af;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    padding: 15px 15px ;
+    transform: transform 0.5s ease;
+
+  }
+
+
+
+  
+  ion-searchbar{
+    --border-radius:15px;
+  }
+
+  ion-fab-button{
+    --background:#274fae;
+    
+    margin-bottom: 10px;
+  }
+
+  #divMessageText{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    width: 100%;
+    height: auto;
+    
+  }
+
+  #listMessages{
+        margin-bottom: 400px;
+  }
+
+  ion-chip{
+    color: rgb(179, 178, 178);
+    background-color: rgb(21, 21, 21);
+
+  
+  }
+
+
+  ion-chip :hover{
+    color: rgb(255, 255, 255);
+  }

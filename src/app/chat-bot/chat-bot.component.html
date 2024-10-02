@@ -1,0 +1,67 @@
+<div id="header">
+  <ion-icon slot="start" color="light" id="chatIcon" name="chatbox-outline"></ion-icon>
+  <span>Ask to my <strong>Ai</strong> model :</span>
+</div>
+
+<div id="chatContainer" #divQA>
+
+
+  <div id="listMessages">
+    <div id="divQA" *ngFor="let message of bloqueQA">
+      <ion-row>
+        <ion-col size="12" offset="0">
+          <ion-item id="divQuestion" class="ion-text-start" *ngIf="message.type === 'question'">
+            <ion-avatar slot="start">
+              <img alt="guestPicture" src="../../assets/userIcon.png">
+            </ion-avatar>
+            <div>
+              <span>You<br></span>
+              <p>{{message.text}}</p>
+            </div>
+            <!-- <ion-textarea [autoGrow]="true" [readonly]="false" label="Answer:" placeholder="{{answer}}"></ion-textarea> -->
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div id="divAnswer" *ngIf="message.type === 'answer'">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img alt="profilePicture" src="../../assets/favicon.png">
+          </ion-avatar>
+          <div id="divMessageText">
+            <span>Sebastian<br></span>
+            <p>
+              {{message.text}}
+            </p>
+          </div>
+          <!-- <ion-textarea [autoGrow]="true" [readonly]="false" label="Answer:" placeholder="{{answer}}"></ion-textarea> -->
+        </ion-item>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="searchbar">
+    <ion-spinner id="loading" name="dots" *ngIf="isLoading"></ion-spinner>
+
+    <div id="chips">
+      <span style="margin-left: 15px;">Try these prompts:<br></span>
+      <ion-chip *ngFor="let chip of chips" (click)="setPrompt(chip)">{{chip}} </ion-chip>
+    </div>
+
+    <ion-row>
+      <ion-col size="9">
+        <ion-searchbar color="dark" #searchbar (keyup.enter)="handleUserInput()" [(ngModel)]="userInput" animated="true"
+          placeholder="Type here"></ion-searchbar>
+      </ion-col>
+      <ion-col size="1">
+        <ion-fab-button [disabled]="userInput === ''" (click)="handleUserInput()"><ion-icon
+            name="arrow-redo-outline"></ion-icon></ion-fab-button>
+
+      </ion-col>
+    </ion-row>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </div>
+
+</div>
